@@ -1,4 +1,5 @@
 from time import time_ns, sleep
+import math
 
 
 class Throttle:
@@ -43,7 +44,7 @@ class Throttle:
     def _round(x, base) -> float:
         '''Utility method to round to nearest base'''
 
-        return (x / base).__ceil__() * base
+        return math.ceil(x / base) * base
 
     def penalize(self) -> bool:
         '''Sleep 1 second on too many requests.
